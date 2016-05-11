@@ -21,7 +21,7 @@ class EntryController {
         
     }
     
-    func deletePlaylist(entry: Entry){
+    func removeEntry(entry: Entry){
             guard let indexOfEntry = entries.indexOf(entry) else {
                 return
             }
