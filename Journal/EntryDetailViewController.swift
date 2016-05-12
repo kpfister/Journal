@@ -10,53 +10,41 @@ import UIKit
 
 class EntryDetailViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
-    
+    // MARK: - Outlets and properties
     @IBOutlet weak var titleTextView: UITextField!
     
     @IBOutlet weak var bodyTextField: UITextView!
     
+    var entry: Entry?
+    
+       // MARK: - IBActions
     
     @IBAction func saveButton(sender: AnyObject) {
         
-        if let entry = self.entry {
-            entry.title = self.titleTextView.text!
-            entry.bodyText = self.bodyTextField.text
-            entry.timeStamp = NSDate()
+        
+        if let entry = entry {
+            guard let title = titleTextView.text, bodyText = bodyTextField.text else {
+                return
+            }
+            entry.title = title
+            entry.bodyText = bodyText
+            self.titleTextView.resignFirstResponder()
+            self.bodyTextField.resignFirstResponder()
         } else {
-            let newEntry = Entry(timeStamp: NSDate(), title: self.titleTextView.text!, bodytext: self.bodyTextField.text)
-            EntryController.sharedInstance.addEntry(newEntry)
-            self.entry = newEntry
+            guard let title = titleTextView.text, bodyText = bodyTextField.text else {
+                return
+            }
+            let entry = Entry(timeStamp: NSDate(), title: title, bodytext: bodyText)
+            EntryController.sharedInstance.addEntry(entry)
+            self.entry = entry
         }
-        
         self.navigationController?.popViewControllerAnimated(true)
-        self.bodyTextField.resignFirstResponder()
-        self.titleTextView.resignFirstResponder()
     }
-        
-//        self.bodyTextField.resignFirstResponder()
-//        self.titleTextView.resignFirstResponder()
-//    }
     
     
     @IBAction func clearButton(sender: AnyObject) {
         titleTextView.text = ""
         bodyTextField.text = ""
-    }
-    
-    
-    var entry: Entry?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        
-        
-        if let entry = entry {
-            updateWithEntry(entry)
-        }
-        titleTextView.delegate = self
-        bodyTextField.delegate = self
     }
     
     
@@ -66,23 +54,16 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate, UITextVi
         self.bodyTextField.text = entry.bodyText
         
     }
-        // Do any additional setup after loading the view.
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: - View controller life cycle methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let entry = entry {
+            updateWithEntry(entry)
+        }
+        titleTextView.delegate = self
+        bodyTextField.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
