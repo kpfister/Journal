@@ -68,29 +68,46 @@ class EntryListTableViewController: UITableViewController {
     }
     
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
+       // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "toDetailView" {
+            if let detailViewController = segue.destinationViewController as? EntryDetailViewController,
+                let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
+                let entry = EntryController.sharedInstance.entries[selectedIndex]
+                detailViewController.entry = entry
+            }
+        }
+    
+        
+        
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+  
 
 }
+
+
+
+
+//override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//    
+//    if segue.identifier == "toPlanetDetail" {
+//        if let detailViewController = segue.destinationViewController as? PlanetDetailViewController,
+//            let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
+//            
+//            let planet = PlanetController.planets[selectedIndex]
+//            detailViewController.planet = planet
+//        }
+//}
+//
+
+
+
+
