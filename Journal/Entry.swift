@@ -8,7 +8,7 @@
 
 import Foundation
 class Entry:Equatable {
-    let timeStamp: NSDate
+    var timeStamp: NSDate
     var title: String
     var bodyText: String
     

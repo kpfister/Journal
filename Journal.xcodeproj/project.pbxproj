@@ -16,6 +16,7 @@
 		758D1F901CE3DAA4006A0222 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758D1F8F1CE3DAA4006A0222 /* EntryController.swift */; };
 		758D1F921CE3E075006A0222 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758D1F911CE3E075006A0222 /* Entry.swift */; };
 		758D1F941CE3F2BB006A0222 /* EntryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758D1F931CE3F2BB006A0222 /* EntryListTableViewController.swift */; };
+		758D1F971CE3FF50006A0222 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758D1F961CE3FF50006A0222 /* EntryDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		758D1F8F1CE3DAA4006A0222 /* EntryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntryController.swift; path = ../EntryController.swift; sourceTree = "<group>"; };
 		758D1F911CE3E075006A0222 /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		758D1F931CE3F2BB006A0222 /* EntryListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryListTableViewController.swift; sourceTree = "<group>"; };
+		758D1F961CE3FF50006A0222 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				68816AC71BBB5405000569CE /* AppDelegate.swift */,
 				68816ACB1BBB5405000569CE /* Main.storyboard */,
 				758D1F931CE3F2BB006A0222 /* EntryListTableViewController.swift */,
+				758D1F961CE3FF50006A0222 /* EntryDetailViewController.swift */,
 				68816ACE1BBB5405000569CE /* Assets.xcassets */,
 				68816AD01BBB5405000569CE /* LaunchScreen.storyboard */,
 				68816AD31BBB5405000569CE /* Info.plist */,
@@ -272,6 +275,7 @@
 				758D1F921CE3E075006A0222 /* Entry.swift in Sources */,
 				758D1F901CE3DAA4006A0222 /* EntryController.swift in Sources */,
 				758D1F941CE3F2BB006A0222 /* EntryListTableViewController.swift in Sources */,
+				758D1F971CE3FF50006A0222 /* EntryDetailViewController.swift in Sources */,
 				68816AC81BBB5405000569CE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
